@@ -1,0 +1,72 @@
+@use "../../abstract/constants" as *;
+
+.mobile-app {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__offer {
+    width: 630px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    padding-right: 50px;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 125%;
+
+    &_accent {
+      color: $color-text-accent;
+    }
+  }
+
+  &__description {
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__screens {
+    & > img {
+      display: block;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__app-store,
+  &__google-play {
+    padding: 14px 20px;
+    width: 200px;
+    height: 64px;
+    border: 1px solid $color-border-inverse;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__source {
+    display: flex;
+    flex-direction: column;
+
+    & > span:first-child{
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 140%;
+    }
+
+    & > span:last-child {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 150%;
+    }
+  }
+}

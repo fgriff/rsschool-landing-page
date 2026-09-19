@@ -265,4 +265,62 @@ body {
   display: block;
 }
 
+.mobile-app {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobile-app__offer {
+  width: 630px;
+}
+.mobile-app__title {
+  margin-bottom: 40px;
+  padding-right: 50px;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 125%;
+}
+.mobile-app__title_accent {
+  color: #b0907a;
+}
+.mobile-app__description {
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+.mobile-app__image > img {
+  display: block;
+}
+.mobile-app__links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.mobile-app__app-store, .mobile-app__google-play {
+  padding: 14px 20px;
+  width: 200px;
+  height: 64px;
+  border: 1px solid #665f55;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mobile-app__source {
+  display: flex;
+  flex-direction: column;
+}
+.mobile-app__source > span:first-child {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 140%;
+}
+.mobile-app__source > span:last-child {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
 /*# sourceMappingURL=style.css.map */
