@@ -1,0 +1,85 @@
+@use "../abstract/constants" as *;
+
+.footer {
+  padding: 100px;
+  border-radius: 40px;
+  background-color: $color-footer-bg;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+
+  &__offer {
+    width: 530px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 125%;
+
+    &_accent {
+      color: $color-text-accent;
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    width: 60px;
+    height: 60px;
+    border: 1px solid $color-border-primary;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+  }
+}
+
+.info {
+  text-align: left;
+
+  &__title {
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 125%;
+  }
+
+  &__title,
+  &__text {
+    color: $color-text-inverse;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__location,
+  &__phone,
+  &__time {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__icon {
+    display: block;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+  }
+}
