@@ -1,0 +1,7 @@
+@use "../abstract/constants" as *;
+
+.container {
+  margin: 0 auto;
+  padding: 20px 40px 40px;
+  max-width: $size-content-width;
+}

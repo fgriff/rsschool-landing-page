@@ -1,0 +1,63 @@
+@use "../abstract/constants" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo img {
+    display: block;
+  }
+
+  &__nav {
+    margin-right: 44px;
+  }
+
+  &__nav-list {
+    display: flex;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.nav-list {
+  &__item {
+    font-weight: 600;
+
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+}
+
+.theme-button {
+  margin-right: 24px;
+  padding: 4px;
+  width: 88px;
+  border: 1px solid $color-border-primary;
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__light,
+  &__dark {
+    width: 36px;
+    height: 36px;
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__light {
+    background-image: url("../../../assets/img/light-icon-active.svg");
+  }
+
+  &__dark {
+    background-image: url("../../../assets/img/dark-icon.svg");
+  }
+}
