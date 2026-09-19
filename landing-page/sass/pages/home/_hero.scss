@@ -1,0 +1,45 @@
+@use "../../abstract/constants" as *;
+
+.hero {
+  margin-top: 20px;
+  margin-bottom: 100px;
+  padding: 100px;
+  color: $color-text-inverse;
+  border-radius: 40px;
+  background-image: url("../../../assets/img/hero-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  &__container {
+    width: 530px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 105%;
+
+    &_accent {
+      color: $color-text-accent;
+      font-style: italic;
+    }
+  }
+
+  &__description {
+    margin-bottom: 40px;
+    color: $color-text-inverse;
+    line-height: 150%;
+  }
+
+  &__button {
+    width: 200px;
+    height: 64px;
+    background-color: $color-bg-light;
+    border-radius: 100px;
+    color: $color-text-primary;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
