@@ -65,4 +65,56 @@ body {
   max-width: 1440px;
 }
 
+.header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo img {
+  display: block;
+}
+.header__nav {
+  margin-right: 44px;
+}
+.header__nav-list {
+  display: flex;
+}
+.header__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list__item {
+  font-weight: 600;
+}
+.nav-list__item:not(:last-child) {
+  margin-right: 40px;
+}
+
+.theme-button {
+  margin-right: 24px;
+  padding: 4px;
+  width: 88px;
+  border: 1px solid #c1b6ad;
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.theme-button__light, .theme-button__dark {
+  width: 36px;
+  height: 36px;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.theme-button__light {
+  background-image: url("../../../assets/img/light-icon-active.svg");
+}
+.theme-button__dark {
+  background-image: url("../../../assets/img/dark-icon.svg");
+}
+
 /*# sourceMappingURL=style.css.map */
