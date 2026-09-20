@@ -438,6 +438,15 @@ body {
   align-items: center;
   gap: 8px;
 }
+.mobile-app__app-store > svg, .mobile-app__google-play > svg {
+  color: #403f3d;
+}
+.mobile-app__app-store:hover, .mobile-app__google-play:hover {
+  background-color: #665f55;
+}
+.mobile-app__app-store:hover > svg, .mobile-app__app-store:hover .mobile-app__source, .mobile-app__google-play:hover > svg, .mobile-app__google-play:hover .mobile-app__source {
+  color: #e1d4c9;
+}
 .mobile-app__source {
   display: flex;
   flex-direction: column;

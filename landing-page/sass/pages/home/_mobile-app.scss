@@ -51,6 +51,19 @@
     display: flex;
     align-items: center;
     gap: 8px;
+
+    & > svg {
+      color: $color-text-primary;
+    }
+
+    &:hover {
+      background-color: $color-border-inverse;
+
+      & > svg,
+      & .mobile-app__source {
+        color: $color-text-inverse;
+      }
+    }
   }
 
   &__source {
