@@ -1,0 +1,51 @@
+@use "../../abstract/constants" as *;
+
+.menu__cards {
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.card {
+  width: 310px;
+
+  &__image {
+    height: 310px;
+    border-radius: 40px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > img {
+      display: block;
+    }
+  }
+
+  &__info {
+    padding: 20px;
+    height: 196px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title,
+  &__price {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 125%;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__description {
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    flex-grow: 1;
+  }
+}

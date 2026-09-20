@@ -136,6 +136,7 @@ body {
 }
 
 .tabs {
+  margin-bottom: 40px;
   display: flex;
   align-items: center;
 }
@@ -176,6 +177,49 @@ body {
   font-size: 16px;
   font-weight: 600;
   line-height: 150%;
+}
+
+.menu__cards {
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.card {
+  width: 310px;
+}
+.card__image {
+  height: 310px;
+  border-radius: 40px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card__image > img {
+  display: block;
+}
+.card__info {
+  padding: 20px;
+  height: 196px;
+  display: flex;
+  flex-direction: column;
+}
+.card__title, .card__price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+}
+.card__title {
+  margin-bottom: 12px;
+}
+.card__description {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  flex-grow: 1;
 }
 
 /*# sourceMappingURL=style.css.map */
