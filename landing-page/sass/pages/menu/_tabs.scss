@@ -1,0 +1,52 @@
+@use "../../abstract/constants" as *;
+
+.tabs {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    padding: 8px 16px 8px 8px;
+    border: 1px solid $color-border-primary;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+
+    &_active {
+      background-color: $color-border-inverse;
+      border-color: $color-border-inverse;
+
+      .tabs__icon {
+        background-color: $color-bg-light;
+      }
+
+      .tabs__text {
+        color: $color-text-inverse;
+      }
+    }
+  }
+
+  &__icon {
+    margin-right: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $color-border-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > img {
+      display: block;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+  }
+}
