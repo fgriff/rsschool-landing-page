@@ -86,12 +86,18 @@ body {
   align-items: center;
 }
 .header__menu {
+  width: 72px;
+  border-bottom: 2px solid transparent;
   font-size: 16px;
   font-weight: 600;
   line-height: 150%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 8px;
+  transition: border 0.3s;
+}
+.header__menu:hover {
+  border-bottom: 2px solid #403f3d;
 }
 
 .theme-switcher {
