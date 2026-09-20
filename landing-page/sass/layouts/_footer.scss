@@ -15,6 +15,7 @@
 
   &__title {
     margin-bottom: 40px;
+    color: $color-text-inverse;
     font-size: 60px;
     font-weight: 600;
     line-height: 125%;
@@ -40,6 +41,18 @@
 
     &:not(:last-child) {
       margin-right: 12px;
+    }
+
+    & > svg {
+      color: $color-text-inverse;
+    }
+
+    &:hover {
+      background-color: $color-text-inverse;
+
+      & > svg {
+        color: $color-text-primary;
+      }
     }
   }
 }
@@ -68,9 +81,16 @@
   &__location,
   &__phone,
   &__time {
+    // height: 28px;
+    border-bottom: 2px solid transparent;
     display: flex;
     align-items: center;
     gap: 8px;
+
+    &:hover {
+      border-bottom: 2px solid $color-text-inverse;
+      cursor: pointer;
+    }
   }
 
   &__icon {

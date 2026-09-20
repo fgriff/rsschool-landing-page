@@ -172,6 +172,7 @@ body {
 }
 .footer__title {
   margin-bottom: 40px;
+  color: #e1d4c9;
   font-size: 60px;
   font-weight: 600;
   line-height: 125%;
@@ -196,6 +197,15 @@ body {
 .socials__item:not(:last-child) {
   margin-right: 12px;
 }
+.socials__item > svg {
+  color: #e1d4c9;
+}
+.socials__item:hover {
+  background-color: #e1d4c9;
+}
+.socials__item:hover > svg {
+  color: #403f3d;
+}
 
 .info {
   text-align: left;
@@ -215,9 +225,14 @@ body {
   gap: 20px;
 }
 .info__location, .info__phone, .info__time {
+  border-bottom: 2px solid transparent;
   display: flex;
   align-items: center;
   gap: 8px;
+}
+.info__location:hover, .info__phone:hover, .info__time:hover {
+  border-bottom: 2px solid #e1d4c9;
+  cursor: pointer;
 }
 .info__icon {
   display: block;
