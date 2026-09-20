@@ -38,6 +38,7 @@ ul {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 button {
@@ -82,8 +83,66 @@ body {
 }
 .header__actions {
   display: flex;
+  align-items: center;
+}
+.header__menu {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-switcher {
+  margin-right: 24px;
+  width: 88px;
+  height: 44px;
+  border: 1px solid #c1b6ad;
+  border-radius: 100px;
+}
+.theme-switcher__input {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  position: absolute;
+}
+.theme-switcher__label {
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.theme-switcher__label .theme-switcher__sun {
+  background-color: #b0907a;
+}
+.theme-switcher__label:hover .theme-switcher__moon {
+  background-color: #665f55;
+}
+.theme-switcher__label:hover .theme-switcher__moon > svg {
+  color: #e1d4c9;
+}
+.theme-switcher__sun, .theme-switcher__moon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+.theme-switcher__sun > svg, .theme-switcher__moon > svg {
+  transition: color 0.3s;
+}
+.theme-switcher__sun > svg {
+  color: #e1d4c9;
+}
+.theme-switcher__moon > svg {
+  color: #403f3d;
 }
 
 .nav-list__item {
@@ -91,30 +150,6 @@ body {
 }
 .nav-list__item:not(:last-child) {
   margin-right: 40px;
-}
-
-.theme-button {
-  margin-right: 24px;
-  padding: 4px;
-  width: 88px;
-  border: 1px solid #c1b6ad;
-  border-radius: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.theme-button__light, .theme-button__dark {
-  width: 36px;
-  height: 36px;
-  display: block;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.theme-button__light {
-  background-image: url("../../../assets/img/light-icon-active.svg");
-}
-.theme-button__dark {
-  background-image: url("../../../assets/img/dark-icon.svg");
 }
 
 .footer {
