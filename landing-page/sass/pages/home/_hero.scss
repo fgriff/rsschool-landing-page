@@ -38,8 +38,29 @@
     height: 64px;
     background-color: $color-bg-light;
     border-radius: 100px;
-    color: $color-text-primary;
-    font-size: 16px;
-    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    & > span {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 150%;
+      color: $color-text-primary;
+    }
+
+    & > img {
+      width: 0;
+      opacity: 0;
+      transition: width $transition-duration, opacity $transition-duration;
+    }
+
+    &:hover {
+      & > img {
+        width: 20px;
+        opacity: 1;
+      }
+    }
   }
 }
