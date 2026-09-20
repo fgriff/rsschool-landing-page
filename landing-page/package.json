@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "home": "sass --watch sass/home-page.scss pages/home/css/style.css",
+    "menu": "sass --watch sass/menu-page.scss pages/menu/css/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
