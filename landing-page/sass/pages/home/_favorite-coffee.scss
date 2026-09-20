@@ -31,14 +31,21 @@
     border-radius: 50%;
     background-position: center;
     background-repeat: no-repeat;
+
+    &:hover {
+      background-color: $color-border-inverse;
+    }
   }
 
-  &__left-btn {
-    background-image: url("../../../assets/img/arrow-left.svg");
-  }
-
+  &__left-btn,
   &__right-btn {
-    background-image: url("../../../assets/img/arrow-right.svg");
+    & > svg {
+      color: $color-text-primary;
+    }
+
+    &:hover > svg {
+      color: $color-text-inverse;
+    }
   }
 
   &__content {

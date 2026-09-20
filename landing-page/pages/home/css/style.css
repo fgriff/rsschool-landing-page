@@ -311,11 +311,14 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
-.slider__left-btn {
-  background-image: url("../../../assets/img/arrow-left.svg");
+.slider__btn:hover {
+  background-color: #665f55;
 }
-.slider__right-btn {
-  background-image: url("../../../assets/img/arrow-right.svg");
+.slider__left-btn > svg, .slider__right-btn > svg {
+  color: #403f3d;
+}
+.slider__left-btn:hover > svg, .slider__right-btn:hover > svg {
+  color: #e1d4c9;
 }
 .slider__content {
   width: 480px;
