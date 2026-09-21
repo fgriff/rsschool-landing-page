@@ -11,9 +11,20 @@
     border-radius: 100px;
     display: flex;
     align-items: center;
+    transition: background-color $transition-duration, border-color $transition-duration, color $transition-duration;
 
     &:not(:last-child) {
       margin-right: 16px;
+    }
+
+    &:hover {
+      background-color: $color-border-inverse;
+      border-color: $color-border-inverse;
+      color: $color-text-inverse;
+
+      & .tabs__icon {
+        background-color: $color-bg-light;
+      }
     }
 
     &_active {
@@ -39,6 +50,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color $transition-duration;
 
     & > img {
       display: block;
