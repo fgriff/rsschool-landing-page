@@ -1,4 +1,5 @@
 @use "../abstract/constants" as *;
+@use "../abstract/mixins" as *;
 
 .header {
   margin-bottom: 20px;
@@ -12,10 +13,25 @@
 
   &__nav {
     margin-right: 44px;
+
+    @include desktop-tablet-900 {
+      margin-right: 0;
+      width: 370px;
+    }
+
+    @include tablet-768 {
+      display: none;
+    }
   }
 
   &__nav-list {
     display: flex;
+  }
+
+  .nav-list__item {
+    @include desktop-tablet-900 {
+      text-align: center;
+    }
   }
 
   &__actions {
@@ -37,6 +53,18 @@
     &:hover {
       border-bottom: 2px solid $color-text-primary;
     }
+
+    @include tablet-768 {
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include tablet-768 {
+      display: block;
+    }
   }
 }
 
@@ -46,6 +74,13 @@
   height: 44px;
   border: 1px solid $color-border-primary;
   border-radius: 100px;
+  display: flex;
+  align-items: center;
+
+  @include tablet-768 {
+    width: 104px;
+    height: 52px;
+  }
 
   &__input {
     margin: -1px;
@@ -89,11 +124,21 @@
     align-items: center;
     transition: background-color $transition-duration;
 
+    @include tablet-768 {
+      width: 44px;
+      height: 44px;
+    }
+
     & > svg {
       transition: color $transition-duration;
     }
   }
 
+  &__sun {
+    @include tablet-768 {
+      margin-right: 8px;
+    }
+  }
   &__sun > svg {
     color: $color-text-inverse;
   }
@@ -109,6 +154,30 @@
 
     &:not(:last-child) {
       margin-right: 40px;
+    }
+  }
+}
+
+.burger {
+  width: 44px;
+  height: 44px;
+  border: 1px solid $color-border-inverse;
+  border-radius: 50%;
+  position: relative;
+
+  &__line {
+    display: block;
+    width: 16px;
+    height: 2px;
+    background-color: $color-border-inverse;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform $transition-duration;
+
+    &:last-child {
+      top: 24px;
     }
   }
 }
