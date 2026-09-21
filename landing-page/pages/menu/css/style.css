@@ -183,7 +183,7 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s;
