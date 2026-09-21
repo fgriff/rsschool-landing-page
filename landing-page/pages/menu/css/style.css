@@ -147,7 +147,7 @@ body {
   align-items: center;
   transition: border 0.3s;
 }
-.header__menu:hover {
+.header__menu_active, .header__menu:hover {
   border-bottom: 2px solid #403f3d;
 }
 @media (max-width: 768px) {
