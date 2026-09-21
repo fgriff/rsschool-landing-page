@@ -21,6 +21,11 @@
       margin-bottom: 100px;
       align-self: start;
     }
+
+    @include tablet-650 {
+      width: 348px;
+      margin-bottom: 40px;
+    }
   }
 
   &__title {
@@ -32,6 +37,11 @@
 
     @include desktop-tablet-900 {
       padding-right: 90px;
+    }
+
+    @include tablet-650 {
+      padding-right: 30px;
+      font-size: 32px;
     }
 
     &_accent {
@@ -62,6 +72,11 @@
     display: flex;
     align-items: center;
     gap: 20px;
+
+    @include tablet-650 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__app-store,

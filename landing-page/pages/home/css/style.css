@@ -625,6 +625,12 @@ body {
     align-self: start;
   }
 }
+@media (max-width: 650px) {
+  .mobile-app__offer {
+    width: 348px;
+    margin-bottom: 40px;
+  }
+}
 .mobile-app__title {
   margin-bottom: 40px;
   padding-right: 50px;
@@ -635,6 +641,12 @@ body {
 @media (max-width: 900px) {
   .mobile-app__title {
     padding-right: 90px;
+  }
+}
+@media (max-width: 650px) {
+  .mobile-app__title {
+    padding-right: 30px;
+    font-size: 32px;
   }
 }
 .mobile-app__title_accent {
@@ -660,6 +672,12 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+@media (max-width: 650px) {
+  .mobile-app__links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .mobile-app__app-store, .mobile-app__google-play {
   padding: 14px 20px;
