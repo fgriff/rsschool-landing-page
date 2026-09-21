@@ -237,6 +237,20 @@ body {
   align-items: center;
   gap: 100px;
 }
+@media (max-width: 1110px) {
+  .footer {
+    padding-left: 60px;
+    padding-right: 0;
+    gap: 0;
+  }
+}
+@media (max-width: 900px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+  }
+}
 .footer__offer {
   width: 530px;
 }
@@ -249,6 +263,7 @@ body {
 }
 .footer__title_accent {
   color: #b0907a;
+  font-style: italic;
 }
 
 .socials {

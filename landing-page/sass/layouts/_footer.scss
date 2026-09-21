@@ -1,4 +1,5 @@
 @use "../abstract/constants" as *;
+@use "../abstract/mixins" as *;
 
 .footer {
   padding: 100px;
@@ -8,6 +9,18 @@
   display: flex;
   align-items: center;
   gap: 100px;
+
+  @include desktop-tablet-1110 {
+    padding-left: 60px;
+    padding-right: 0;
+    gap: 0;
+  }
+
+  @include desktop-tablet-900 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+  }
 
   &__offer {
     width: 530px;
@@ -22,6 +35,7 @@
 
     &_accent {
       color: $color-text-accent;
+      font-style: italic;
     }
   }
 }

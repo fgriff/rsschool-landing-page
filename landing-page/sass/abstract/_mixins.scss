@@ -1,5 +1,11 @@
 @use "./constants" as *;
 
+@mixin desktop-tablet-1110 {
+  @media (max-width: $size-desktop-tablet-width-1110) {
+    @content;
+  }
+}
+
 @mixin desktop-tablet-900 {
   @media (max-width: $size-desktop-tablet-width) {
     @content;
