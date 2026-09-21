@@ -487,11 +487,25 @@ body {
   flex-wrap: wrap;
   gap: 40px;
 }
+@media (max-width: 900px) {
+  .about__pictures {
+    height: 1220px;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+}
 
 .pictures__item {
-  width: 660px;
+  width: calc(50% - 20px);
+  max-width: 660px;
   border-radius: 20px;
   overflow: hidden;
+}
+@media (max-width: 900px) {
+  .pictures__item {
+    width: 100%;
+    max-width: 688px;
+  }
 }
 .pictures__item:hover {
   cursor: pointer;
@@ -512,6 +526,11 @@ body {
 }
 .pictures__item:nth-child(2), .pictures__item:nth-child(3) {
   height: 430px;
+}
+@media (max-width: 900px) {
+  .pictures__item:nth-child(2), .pictures__item:nth-child(3) {
+    display: none;
+  }
 }
 
 .mobile-app {
