@@ -1,4 +1,5 @@
 @use "../../abstract/constants" as *;
+@use "../../abstract/mixins" as *;
 
 .hero {
   margin-top: 20px;
@@ -10,6 +11,10 @@
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+
+  @include tablet-768 {
+    padding-left: 60px;
+  }
 
   &__container {
     width: 530px;
@@ -54,6 +59,11 @@
       width: 0;
       opacity: 0;
       transition: width $transition-duration, opacity $transition-duration;
+
+      @include tablet-768 {
+        width: 20px;
+        opacity: 1;
+      }
     }
 
     &:hover {

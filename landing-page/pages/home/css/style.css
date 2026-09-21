@@ -327,6 +327,11 @@ body {
   background-repeat: no-repeat;
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .hero {
+    padding-left: 60px;
+  }
+}
 .hero__container {
   width: 530px;
 }
@@ -365,6 +370,12 @@ body {
   width: 0;
   opacity: 0;
   transition: width 0.3s, opacity 0.3s;
+}
+@media (max-width: 768px) {
+  .hero__button > img {
+    width: 20px;
+    opacity: 1;
+  }
 }
 .hero__button:hover > img {
   width: 20px;
