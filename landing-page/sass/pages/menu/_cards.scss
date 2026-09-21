@@ -1,10 +1,16 @@
 @use "../../abstract/constants" as *;
+@use "../../abstract/mixins" as *;
 
 .menu__cards {
   margin-bottom: 100px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 40px;
+
+  @include desktop-1439 {
+    margin-bottom: 40px;
+  }
 }
 
 .card {
@@ -17,6 +23,20 @@
 
     & .card__image > img {
       transform: scale(1);
+    }
+  }
+
+  @include desktop-1439 {
+    &:nth-last-child(1),
+    &:nth-last-child(2) {
+      display: none;
+    }
+  }
+
+  @include desktop-tablet-1089 {
+    &:nth-last-child(3),
+    &:nth-last-child(4) {
+      display: none;
     }
   }
 

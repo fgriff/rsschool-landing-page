@@ -1,5 +1,44 @@
+@use "../../abstract/constants" as *;
+@use "../../abstract/mixins" as *;
+
 .menu {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include desktop-1439 {
+    margin-bottom: 100px;
+  }
+
+  &__load-btn {
+    display: none;
+
+    @include desktop-1439 {
+      display: block;
+    }
+  }
+  
+  &__load-btn > button {
+    width: 60px;
+    height: 60px;
+    border: 1px solid $color-border-inverse;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-color $transition-duration;
+
+    & > svg {
+      transition: color $transition-duration;
+      color: $color-text-primary;
+    }
+
+    &:hover {
+      border-color: $color-border-inverse;
+      background-color: $color-border-inverse;
+
+       & > svg {
+        color: $color-text-inverse;
+      }
+    }
+  }
 }
