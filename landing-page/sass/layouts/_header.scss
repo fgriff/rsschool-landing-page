@@ -82,6 +82,10 @@
     height: 52px;
   }
 
+  @include mobile-380 {
+    margin-right: 12px;
+  }
+
   &__input {
     margin: -1px;
     padding: 0;

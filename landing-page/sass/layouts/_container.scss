@@ -1,7 +1,12 @@
 @use "../abstract/constants" as *;
+@use "../abstract/mixins" as *;
 
 .container {
   margin: 0 auto;
   padding: 20px 40px 40px;
   max-width: $size-content-width;
+
+  @include mobile-380 {
+    padding: 20px 16px 40px;
+  }
 }
