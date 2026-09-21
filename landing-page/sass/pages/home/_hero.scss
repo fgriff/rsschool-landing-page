@@ -22,7 +22,11 @@
   }
 
   &__container {
-    width: 100%;
+    width: 530px;
+
+    @include tablet-650 {
+      width: 100%;
+    }
   }
 
   &__title {

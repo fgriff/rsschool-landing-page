@@ -380,7 +380,12 @@ body {
   }
 }
 .hero__container {
-  width: 100%;
+  width: 530px;
+}
+@media (max-width: 650px) {
+  .hero__container {
+    width: 100%;
+  }
 }
 .hero__title {
   margin-bottom: 40px;
