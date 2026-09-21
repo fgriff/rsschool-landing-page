@@ -51,9 +51,15 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: background-color $transition-duration;
 
     & > svg {
       color: $color-text-primary;
+    }
+
+    & > svg,
+    & .mobile-app__source {
+      transition: color $transition-duration;
     }
 
     &:hover {

@@ -193,12 +193,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.3s;
 }
 .socials__item:not(:last-child) {
   margin-right: 12px;
 }
 .socials__item > svg {
   color: #e1d4c9;
+  transition: color 0.3s;
 }
 .socials__item:hover {
   background-color: #e1d4c9;
@@ -229,6 +231,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: border-bottom 0.3s;
 }
 .info__location:hover, .info__phone:hover, .info__time:hover {
   border-bottom: 2px solid #e1d4c9;

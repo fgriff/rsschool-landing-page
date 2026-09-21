@@ -38,6 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color $transition-duration;
 
     &:not(:last-child) {
       margin-right: 12px;
@@ -45,6 +46,7 @@
 
     & > svg {
       color: $color-text-inverse;
+      transition: color $transition-duration;
     }
 
     &:hover {
@@ -81,11 +83,11 @@
   &__location,
   &__phone,
   &__time {
-    // height: 28px;
     border-bottom: 2px solid transparent;
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: border-bottom $transition-duration;
 
     &:hover {
       border-bottom: 2px solid $color-text-inverse;

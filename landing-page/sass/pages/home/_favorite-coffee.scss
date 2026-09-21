@@ -31,6 +31,7 @@
     border-radius: 50%;
     background-position: center;
     background-repeat: no-repeat;
+    transition: background-color $transition-duration;
 
     &:hover {
       background-color: $color-border-inverse;
@@ -40,6 +41,7 @@
   &__left-btn,
   &__right-btn {
     & > svg {
+      transition: color $transition-duration;
       color: $color-text-primary;
     }
 
