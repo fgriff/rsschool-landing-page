@@ -8,16 +8,21 @@
   color: $color-text-inverse;
   border-radius: 40px;
   background-image: url("../../../assets/img/hero-bg.jpg");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
 
-  @include tablet-768 {
+  @include tablet-780 {
     padding-left: 60px;
   }
 
+  @include tablet-740 {
+    padding: 60px 16px;
+  }
+
   &__container {
-    width: 530px;
+    width: 100%;
   }
 
   &__title {
@@ -29,6 +34,11 @@
     &_accent {
       color: $color-text-accent;
       font-style: italic;
+    }
+
+    @include tablet-650 {
+      font-size: 42px;
+      line-height: 115%;
     }
   }
 

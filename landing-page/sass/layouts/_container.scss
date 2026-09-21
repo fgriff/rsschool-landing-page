@@ -6,7 +6,7 @@
   padding: 20px 40px 40px;
   max-width: $size-content-width;
 
-  @include mobile-380 {
+  @include tablet-650 {
     padding: 20px 16px 40px;
   }
 }
