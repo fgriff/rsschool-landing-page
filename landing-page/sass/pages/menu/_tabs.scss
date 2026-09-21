@@ -8,7 +8,7 @@
 
   &__item {
     padding: 8px 16px 8px 8px;
-    border: 1px solid $color-border-primary;
+    border: 1px solid var(--border-primary);
     border-radius: 100px;
     display: flex;
     align-items: center;
@@ -25,19 +25,22 @@
     &:hover {
       background-color: $color-border-inverse;
       border-color: $color-border-inverse;
-      color: $color-text-inverse;
 
       & .tabs__icon {
         background-color: $color-bg-light;
       }
+
+      & .tabs__text {
+        color: var(--text-inverse);
+      }
     }
 
     &_active {
-      background-color: $color-border-inverse;
-      border-color: $color-border-inverse;
+      background-color: var(--footer-bg);
+      border-color:  var(--footer-bg);
 
       .tabs__icon {
-        background-color: $color-bg-light;
+        background-color: var(--background);
       }
 
       .tabs__text {
@@ -51,7 +54,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: $color-border-primary;
+    background-color: var(--border-primary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,6 +66,7 @@
   }
 
   &__text {
+    color: var(--text-primary);
     font-size: 16px;
     font-weight: 600;
     line-height: 150%;
