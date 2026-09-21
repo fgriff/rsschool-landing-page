@@ -55,7 +55,7 @@
   &__button {
     width: 200px;
     height: 64px;
-    background-color: $color-bg-light;
+    background-color: var(--background);
     border-radius: 100px;
     display: flex;
     justify-content: center;
@@ -66,12 +66,13 @@
       font-size: 16px;
       font-weight: 600;
       line-height: 150%;
-      color: $color-text-primary;
+      color: var(--text-primary);
     }
 
-    & > img {
+    & > svg {
       width: 0;
       opacity: 0;
+      color: var(--text-primary);
       transition: width $transition-duration, opacity $transition-duration;
 
       @include tablet-768 {
@@ -81,7 +82,7 @@
     }
 
     &:hover {
-      & > img {
+      & > svg {
         width: 20px;
         opacity: 1;
       }

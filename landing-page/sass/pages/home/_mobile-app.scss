@@ -97,7 +97,7 @@
     transition: background-color $transition-duration;
 
     & > svg {
-      color: $color-text-primary;
+      color: var(--text-primary);
     }
 
     & > svg,

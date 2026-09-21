@@ -32,8 +32,8 @@ html {
 }
 
 body {
-  color: $color-text-primary;
+  color: var(--text-primary);
   font-family: "Inter", sans-serif;
   font-size: 1.6rem;
-  background-color: $color-bg-light;
+  background-color: var(--background);
 }
