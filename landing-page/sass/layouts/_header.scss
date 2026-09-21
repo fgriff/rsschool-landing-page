@@ -52,7 +52,7 @@
 
     &_active,
     &:hover {
-      border-bottom: 2px solid $color-text-primary;
+      border-bottom: 2px solid var(--text-primary);
     }
 
     @include tablet-768 {
