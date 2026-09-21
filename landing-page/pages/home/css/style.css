@@ -261,8 +261,19 @@ body {
     gap: 100px;
   }
 }
+@media (max-width: 650px) {
+  .footer {
+    padding: 60px 16px;
+    gap: 40px;
+  }
+}
 .footer__offer {
   width: 530px;
+}
+@media (max-width: 740px) {
+  .footer__offer {
+    width: 100%;
+  }
 }
 .footer__title {
   margin-bottom: 40px;
@@ -270,6 +281,11 @@ body {
   font-size: 60px;
   font-weight: 600;
   line-height: 125%;
+}
+@media (max-width: 650px) {
+  .footer__title {
+    font-size: 32px;
+  }
 }
 .footer__title_accent {
   color: #b0907a;
@@ -623,6 +639,11 @@ body {
     width: 688px;
     margin-bottom: 100px;
     align-self: start;
+  }
+}
+@media (max-width: 740px) {
+  .mobile-app__offer {
+    width: 100%;
   }
 }
 @media (max-width: 650px) {

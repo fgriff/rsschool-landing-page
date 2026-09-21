@@ -22,6 +22,11 @@
       align-self: start;
     }
 
+    @include tablet-740 {
+      width: 100%;
+    }
+    
+
     @include tablet-650 {
       width: 348px;
       margin-bottom: 40px;
