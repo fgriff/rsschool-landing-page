@@ -1,4 +1,5 @@
 @use "../../abstract/constants" as *;
+@use "../../abstract/mixins" as *;
 
 .menu {
   &__title {
@@ -12,6 +13,10 @@
     &_accent {
       color: $color-text-accent;
       font-style: italic;
+    }
+
+    @include tablet-650 {
+      font-size: 32px;
     }
   }
 }

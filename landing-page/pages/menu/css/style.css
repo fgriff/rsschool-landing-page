@@ -408,6 +408,11 @@ body {
   color: #b0907a;
   font-style: italic;
 }
+@media (max-width: 650px) {
+  .menu__title {
+    font-size: 32px;
+  }
+}
 
 .tabs {
   margin-bottom: 40px;
@@ -424,6 +429,11 @@ body {
 }
 .tabs__item:not(:last-child) {
   margin-right: 16px;
+}
+@media (max-width: 650px) {
+  .tabs__item:not(:last-child) {
+    margin-right: 8px;
+  }
 }
 .tabs__item:hover {
   background-color: #665f55;
@@ -478,6 +488,7 @@ body {
 
 .card {
   width: 310px;
+  height: 506px;
   border: 1px solid #c1b6ad;
   border-radius: 40px;
 }
