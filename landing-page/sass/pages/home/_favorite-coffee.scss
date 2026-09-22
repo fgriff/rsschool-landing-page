@@ -51,7 +51,8 @@
     transition: background-color $transition-duration;
 
     &:hover {
-      background-color: $color-border-inverse;
+      background-color: var(--footer-bg);
+      border-color: var(--footer-bg);
     }
   }
 

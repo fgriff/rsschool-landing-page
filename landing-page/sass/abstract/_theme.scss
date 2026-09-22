@@ -8,6 +8,8 @@
   --border-inverse: #{$color-border-inverse};
   --border-primary: #{$color-border-primary};
   --footer-bg: #{$color-footer-bg};
+  --sun-hover-bg: #{$color-sun-hover-bg};
+  --moon-hover-bg: #{$color-moon-hover-bg};
 }
 
 html.theme-dark {
@@ -18,6 +20,8 @@ html.theme-dark {
   --border-inverse: #{$color-border-inverse-dark};
   --border-primary: #{$color-border-primary-dark};
   --footer-bg: #{$color-footer-bg-dark};
+  --sun-hover-bg: #{$color-sun-hover-bg-dark};
+  --moon-hover-bg: #{$color-moon-hover-bg-dark};
 }
 
 html:has(#theme-toggle:checked) {
@@ -28,4 +32,6 @@ html:has(#theme-toggle:checked) {
   --border-inverse: #{$color-border-inverse-dark};
   --border-primary: #{$color-border-primary-dark};
   --footer-bg: #{$color-footer-bg-dark};
+  --sun-hover-bg: #{$color-sun-hover-bg-dark};
+  --moon-hover-bg: #{$color-moon-hover-bg-dark};
 }

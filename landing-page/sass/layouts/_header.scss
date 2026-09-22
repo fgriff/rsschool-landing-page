@@ -30,6 +30,13 @@
   }
 
   .nav-list__item {
+    border-bottom: 2px solid transparent;
+    transition: border $transition-duration;
+
+    &:hover {
+      border-bottom: 2px solid var(--text-primary);
+    }
+
     @include desktop-tablet-900 {
       text-align: center;
     }
@@ -119,8 +126,12 @@
     }
 
     &:hover {
+      & .theme-switcher__sun {
+        background-color: var(--sun-hover-bg);
+      }
+
       & .theme-switcher__moon {
-        background-color: $color-border-inverse;
+        background-color: var(--moon-hover-bg);
 
         & > svg {
           color: $color-text-inverse;
@@ -176,7 +187,7 @@
 .burger {
   width: 44px;
   height: 44px;
-  border: 1px solid $color-border-inverse;
+  border: 1px solid var(--border-inverse);
   border-radius: 50%;
   position: relative;
 
@@ -184,7 +195,7 @@
     display: block;
     width: 16px;
     height: 2px;
-    background-color: $color-border-inverse;
+    background-color: var(--text-primary);
     position: absolute;
     top: 16px;
     left: 50%;

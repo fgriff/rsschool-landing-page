@@ -77,10 +77,11 @@
     }
 
     &:hover {
-      background-color: $color-text-inverse;
+      background-color: var(--background);
+      border-color: var(--background);
 
       & > svg {
-        color: $color-text-primary;
+        color: var(--text-primary);
       }
     }
   }

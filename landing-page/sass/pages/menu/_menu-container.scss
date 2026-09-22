@@ -18,27 +18,27 @@
     }
   }
   
-  &__load-btn > button {
+  &__load-more-btn {
     width: 60px;
     height: 60px;
-    border: 1px solid $color-border-inverse;
+    border: 1px solid var(--text-primary);
     border-radius: 50%;
     background-position: center;
     background-repeat: no-repeat;
     transition: background-color $transition-duration;
 
-    & > svg {
-      transition: color $transition-duration;
-      color: $color-text-primary;
-    }
-
     &:hover {
-      border-color: $color-border-inverse;
-      background-color: $color-border-inverse;
+      background-color: var(--footer-bg);
+      border-color: var(--footer-bg);
 
-       & > svg {
+      & > svg {
         color: $color-text-inverse;
       }
+    }
+
+    & > svg {
+      transition: color $transition-duration;
+      color: var(--border-inverse)
     }
   }
 }

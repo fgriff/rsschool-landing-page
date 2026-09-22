@@ -23,28 +23,16 @@
       }
     }
 
+    &_active,
     &:hover {
-      background-color: $color-border-inverse;
-      border-color: $color-border-inverse;
+      background-color: var(--footer-bg);
+      border-color: var(--footer-bg);
 
       & .tabs__icon {
-        background-color: $color-bg-light;
-      }
-
-      & .tabs__text {
-        color: var(--text-inverse);
-      }
-    }
-
-    &_active {
-      background-color: var(--footer-bg);
-      border-color:  var(--footer-bg);
-
-      .tabs__icon {
         background-color: var(--background);
       }
 
-      .tabs__text {
+      & .tabs__text {
         color: $color-text-inverse;
       }
     }
