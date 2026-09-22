@@ -108,6 +108,7 @@ body {
   align-items: center;
 }
 .header__logo > svg {
+  display: block;
   color: var(--text-primary);
 }
 .header__nav {
@@ -199,6 +200,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 8px;
+}
+@media (max-width: 768px) {
+  .theme-switcher__label {
+    gap: 0;
+  }
 }
 .theme-switcher__label .theme-switcher__sun {
   background-color: var(--text-accent);
@@ -454,6 +461,7 @@ body {
 }
 .tabs__item {
   padding: 8px 16px 8px 8px;
+  height: 46px;
   border: 1px solid var(--border-primary);
   border-radius: 100px;
   display: flex;
