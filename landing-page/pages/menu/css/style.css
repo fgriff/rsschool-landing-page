@@ -395,13 +395,15 @@ body {
   gap: 20px;
 }
 .info__location, .info__phone, .info__time {
-  border-bottom: 2px solid transparent;
   display: flex;
   align-items: center;
   gap: 8px;
+}
+.info__location, .info__phone {
+  border-bottom: 2px solid transparent;
   transition: border-bottom 0.3s;
 }
-.info__location:hover, .info__phone:hover, .info__time:hover {
+.info__location:hover, .info__phone:hover {
   border-bottom: 2px solid #e1d4c9;
   cursor: pointer;
 }

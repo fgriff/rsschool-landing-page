@@ -111,10 +111,14 @@
   &__location,
   &__phone,
   &__time {
-    border-bottom: 2px solid transparent;
     display: flex;
     align-items: center;
     gap: 8px;
+  }
+
+  &__location,
+  &__phone {
+    border-bottom: 2px solid transparent;
     transition: border-bottom $transition-duration;
 
     &:hover {
