@@ -1,0 +1,139 @@
+@use "../abstract/constants" as *;
+@use "../abstract/mixins" as *;
+
+.footer {
+  padding: 100px;
+  border-radius: 40px;
+  background-color: var(--footer-bg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+
+  @include desktop-tablet-1110 {
+    padding-left: 60px;
+    padding-right: 0;
+    gap: 0;
+  }
+
+  @include desktop-tablet-900 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+  }
+
+  @include tablet-650 {
+    padding: 60px 16px;
+    gap: 40px;
+  }
+
+  &__offer {
+    width: 530px;
+
+    @include tablet-740 {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    color: $color-text-inverse;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 125%;
+
+    @include tablet-650 {
+      font-size: 32px;
+    }
+
+    &_accent {
+      color: $color-text-accent;
+      font-style: italic;
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--border-primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color $transition-duration;
+
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+
+    & > svg {
+      color: $color-text-inverse;
+      transition: color $transition-duration;
+    }
+
+    &:hover {
+      background-color: var(--background);
+      border-color: var(--background);
+
+      & > svg {
+        color: var(--text-primary);
+      }
+    }
+  }
+}
+
+.info {
+  text-align: left;
+
+  &__title {
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 125%;
+  }
+
+  &__title,
+  &__text {
+    color: $color-text-inverse;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__location,
+  &__phone,
+  &__time {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__location,
+  &__phone {
+    border-bottom: 2px solid transparent;
+    transition: border-bottom $transition-duration;
+
+    &:hover {
+      border-bottom: 2px solid $color-text-inverse;
+      cursor: pointer;
+    }
+  }
+
+  &__icon {
+    display: block;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+  }
+}

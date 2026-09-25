@@ -1,0 +1,55 @@
+@use "./constants" as *;
+
+@mixin desktop-1439 {
+  @media (max-width: $size-desktop-1439) {
+    @content;
+  }
+}
+
+@mixin desktop-tablet-1110 {
+  @media (max-width: $size-desktop-tablet-width-1110) {
+    @content;
+  }
+}
+
+@mixin desktop-tablet-1089 {
+  @media (max-width: $size-desktop-tablet-width-1089) {
+    @content;
+  }
+}
+
+@mixin desktop-tablet-900 {
+  @media (max-width: $size-desktop-tablet-width) {
+    @content;
+  }
+}
+
+@mixin tablet-780 {
+  @media (max-width: $size-tablet-width-780) {
+    @content;
+  }
+}
+
+@mixin tablet-768 {
+  @media (max-width: $size-tablet-width) {
+    @content;
+  }
+}
+
+@mixin tablet-740 {
+  @media (max-width: $size-tablet-width-740) {
+    @content;
+  }
+}
+
+@mixin tablet-650 {
+  @media (max-width: $size-tablet-width-650) {
+    @content;
+  }
+}
+
+@mixin mobile-380 {
+  @media (max-width: $size-mobile-width) {
+    @content;
+  }
+}

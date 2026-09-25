@@ -1,0 +1,63 @@
+@use "../../abstract/constants" as *;
+@use "../../abstract/mixins" as *;
+
+.tabs {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+
+  &__item {
+    padding: 8px 16px 8px 8px;
+    height: 46px;
+    border: 1px solid var(--border-primary);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    transition: background-color $transition-duration, border-color $transition-duration, color $transition-duration;
+
+    &:not(:last-child) {
+      margin-right: 16px;
+
+      @include tablet-650 {
+        margin-right: 8px;
+      }
+    }
+
+    &_active,
+    &:hover {
+      background-color: var(--footer-bg);
+      border-color: var(--footer-bg);
+
+      & .tabs__icon {
+        background-color: var(--background);
+      }
+
+      & .tabs__text {
+        color: $color-text-inverse;
+      }
+    }
+  }
+
+  &__icon {
+    margin-right: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--border-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color $transition-duration;
+
+    & > img {
+      display: block;
+    }
+  }
+
+  &__text {
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+  }
+}

@@ -1,0 +1,37 @@
+@use "./constants" as *;
+
+:root {
+  --background: #{$color-bg-light};
+  --text-accent: #{$color-text-accent};
+  --text-inverse: #{$color-text-inverse};
+  --text-primary: #{$color-text-primary};
+  --border-inverse: #{$color-border-inverse};
+  --border-primary: #{$color-border-primary};
+  --footer-bg: #{$color-footer-bg};
+  --sun-hover-bg: #{$color-sun-hover-bg};
+  --moon-hover-bg: #{$color-moon-hover-bg};
+}
+
+html.theme-dark {
+  --background: #{$color-bg-dark};
+  --text-accent: #{$color-text-accent-dark};
+  --text-inverse: #{$color-text-inverse-dark};
+  --text-primary: #{$color-text-primary-dark};
+  --border-inverse: #{$color-border-inverse-dark};
+  --border-primary: #{$color-border-primary-dark};
+  --footer-bg: #{$color-footer-bg-dark};
+  --sun-hover-bg: #{$color-sun-hover-bg-dark};
+  --moon-hover-bg: #{$color-moon-hover-bg-dark};
+}
+
+html:has(#theme-toggle:checked) {
+  --background: #{$color-bg-dark};
+  --text-accent: #{$color-text-accent-dark};
+  --text-inverse: #{$color-text-inverse-dark};
+  --text-primary: #{$color-text-primary-dark};
+  --border-inverse: #{$color-border-inverse-dark};
+  --border-primary: #{$color-border-primary-dark};
+  --footer-bg: #{$color-footer-bg-dark};
+  --sun-hover-bg: #{$color-sun-hover-bg-dark};
+  --moon-hover-bg: #{$color-moon-hover-bg-dark};
+}

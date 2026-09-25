@@ -1,0 +1,134 @@
+@use "../../abstract/constants" as *;
+@use "../../abstract/mixins" as *;
+
+.favorite {
+  margin-bottom: 100px;
+
+  &__title {
+    margin-bottom: 40px;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 125%;
+    text-align: center;
+
+    @include tablet-650 {
+      font-size: 32px;
+    }
+
+    &_accent {
+      color: $color-text-accent;
+      font-style: italic;
+    }
+  }
+}
+
+.slider {
+  &__container {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet-650 {
+      justify-content: center;
+    }
+  }
+
+  &__left-control,
+  &__right-control {
+    @include tablet-650 {
+      display: none;
+    }
+  }
+
+  &__btn {
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--text-primary);
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-color $transition-duration;
+
+    &:hover {
+      background-color: var(--footer-bg);
+      border-color: var(--footer-bg);
+    }
+  }
+
+  &__left-btn,
+  &__right-btn {
+    & > svg {
+      transition: color $transition-duration;
+      color: var(--border-inverse)
+    }
+
+    &:hover > svg {
+      color: $color-text-inverse;
+    }
+  }
+
+  &__content {
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet-650 {
+      width: 348px;
+    }
+  }
+
+  &__image {
+    margin-bottom: 20px;
+
+    & > img {
+      display: block;
+
+      @include tablet-650 {
+        width: 100%;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 125%;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: center;
+  }
+
+  &__price{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 125%;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__bullet {
+    width: 40px;
+    height: 4px;
+    background-color: var(--border-primary);
+
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+
+    &_active {
+      background-color: var(--border-inverse);
+    }
+  }
+}

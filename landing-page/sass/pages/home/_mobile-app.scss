@@ -1,0 +1,135 @@
+@use "../../abstract/constants" as *;
+@use "../../abstract/mixins" as *;
+
+.mobile-app {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  @include desktop-tablet-900 {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  &__offer {
+    width: 630px;
+
+    @include desktop-tablet-900 {
+      width: 688px;
+      margin-bottom: 100px;
+      align-self: start;
+    }
+
+    @include tablet-740 {
+      width: 100%;
+    }
+    
+
+    @include tablet-650 {
+      width: 348px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    padding-right: 50px;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 125%;
+
+    @include desktop-tablet-900 {
+      padding-right: 90px;
+    }
+
+    @include tablet-650 {
+      padding-right: 30px;
+      font-size: 32px;
+    }
+
+    &_accent {
+      color: $color-text-accent;
+      font-style: italic;
+    }
+  }
+
+  &__description {
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__screens {
+    width: 100%;
+    max-width: 630px;
+
+    & > img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include tablet-650 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__app-store,
+  &__google-play {
+    padding: 14px 20px;
+    width: 200px;
+    height: 64px;
+    border: 1px solid $color-border-inverse;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color $transition-duration;
+
+    & > svg {
+      color: var(--text-primary);
+    }
+
+    & > svg,
+    & .mobile-app__source {
+      transition: color $transition-duration;
+    }
+
+    &:hover {
+      background-color: var(--footer-bg);
+      border-color: var(--footer-bg);
+
+      & > svg,
+      & .mobile-app__source {
+        color: $color-text-inverse;
+      }
+    }
+  }
+
+  &__source {
+    display: flex;
+    flex-direction: column;
+
+    & > span:first-child{
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 140%;
+    }
+
+    & > span:last-child {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 150%;
+    }
+  }
+}
