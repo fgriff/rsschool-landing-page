@@ -34,6 +34,37 @@
     }
   }
 
+  &__wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__track {
+    display: flex;
+    transition: transform $transition-duration;
+    transform: translateX(-100%);
+  }
+
+  &__slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  &__content {
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
+    @include tablet-650 {
+      width: 348px;
+    }
+  }
+
   &__left-control,
   &__right-control {
     @include tablet-650 {
@@ -65,17 +96,6 @@
 
     &:hover > svg {
       color: $color-text-inverse;
-    }
-  }
-
-  &__content {
-    width: 480px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    @include tablet-650 {
-      width: 348px;
     }
   }
 
