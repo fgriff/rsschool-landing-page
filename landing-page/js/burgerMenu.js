@@ -1,4 +1,5 @@
 const KEY = 'Esc';
+const MAX_WIDTH_TO_HIDE_MENU = 768;
 
 export const burgerMenu = () => {
   const pageContainer = document.querySelector('.container');
@@ -73,8 +74,19 @@ export const burgerMenu = () => {
     }
   }
 
+  const resizeHandler = (e) => {
+    const shouldHideMenu =
+      e.target.innerWidth > MAX_WIDTH_TO_HIDE_MENU &&
+      burgerMenu.classList.contains('burger-menu_opened');
+
+    if (shouldHideMenu) {
+      closeMenu();
+    };
+  }
+
   burgerButton.addEventListener('click', burgerButtonClickHandler);
   window.addEventListener('keydown', keyClickHandler);
   burgerMenu.addEventListener('click', burgerMenuClickHandler);
   burgerMenu.addEventListener('transitionend', burgerMenuTransitionEndHandler);
+  window.addEventListener('resize', resizeHandler);
 }
