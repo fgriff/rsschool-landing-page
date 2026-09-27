@@ -13,7 +13,7 @@
   &__load-btn {
     display: none;
 
-    @include desktop-1439 {
+    @include tablet-768 {
       display: block;
     }
   }
