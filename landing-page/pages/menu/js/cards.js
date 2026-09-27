@@ -79,9 +79,9 @@ export const cards = () => {
     cardsContainer.append(...cards);
   }
 
-  const changeActiveButton = (category) => {
+  const changeActiveButton = () => {
     tabsButtons.forEach((tab) =>
-      tab.classList.toggle('tabs__item_active', tab.dataset['category'] === category))
+      tab.classList.toggle('tabs__item_active', tab.dataset['category'] === currentCategory))
   }
 
   const tabsClickHandler = (e) => {
@@ -91,7 +91,15 @@ export const cards = () => {
       return;
     }
 
-    changeActiveButton(button.dataset['category']);
+    currentCategory = button.dataset['category'];
+
+    changeActiveButton();
+
+    const startIndex = categoryCardsCount[currentCategory].offset;
+    const endIndex = categoryCardsCount[currentCategory].offset + categoryCardsCount[currentCategory].count;
+
+    const newCategoryCards = generateCards(startIndex, endIndex);
+    cardsContainer.replaceChildren(...newCategoryCards);
   }
 
   tabs.addEventListener('click', tabsClickHandler);
