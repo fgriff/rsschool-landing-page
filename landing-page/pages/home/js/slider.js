@@ -62,4 +62,8 @@ export const slider = () => {
   rightArrow.addEventListener('click', () => moveTo(slideNumber + 1));
   leftArrow.addEventListener('click',  () => moveTo(slideNumber - 1));
   track.addEventListener('transitionend', resetAnimationPosition);
+
+  bullets.forEach((bullet, index) => {
+    bullet.addEventListener('click', () => moveTo(index + 1));
+  });
 }
