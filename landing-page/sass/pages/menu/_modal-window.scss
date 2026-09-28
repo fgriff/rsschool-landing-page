@@ -11,8 +11,6 @@
   z-index: 2;
 
   &:hover {
-    cursor: pointer;
-
     & .modal-window__image > img {
       transform: scale(1);
     }

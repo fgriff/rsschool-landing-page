@@ -1,5 +1,7 @@
 import { createModalWindowCard } from "./modalWindowCard.js";
 
+const KEY = 'Esc';
+
 export const modalWindow = () => {
   const container = document.querySelector('.container');
   const overlay = container.querySelector('.overlay');
@@ -11,7 +13,8 @@ export const modalWindow = () => {
     if (!card) {
       return;
     }
-    const modalWindowCard = createModalWindowCard();
+
+    const modalWindowCard = createModalWindowCard(closeModalWindow);
 
     overlay.replaceChildren(modalWindowCard);
 
@@ -19,5 +22,23 @@ export const modalWindow = () => {
     container.classList.add('no-scroll');
   }
 
-  cardsContainer.addEventListener('click', cardClickHandler)
+  const closeModalWindow = (e) => {
+    if (e.target.classList.contains('modal-window__button') ||
+        e.target.classList.contains('overlay')
+      ) {
+      overlay.classList.add('overlay_hidden');
+      container.classList.remove('no-scroll');
+    }
+  }
+
+  const keyClickHandler = (e) => {
+    if (e.key.startsWith(KEY)) {
+      overlay.classList.add('overlay_hidden');
+      container.classList.remove('no-scroll');
+    }
+  }
+
+  cardsContainer.addEventListener('click', cardClickHandler);
+  overlay.addEventListener('click', closeModalWindow);
+  window.addEventListener('keydown', keyClickHandler);
 }

@@ -1,4 +1,4 @@
-export const createModalWindowCard = () => {
+export const createModalWindowCard = (closeHandler) => {
   const container = document.createElement('div');
   container.classList.add('modal-window');
 
@@ -140,6 +140,7 @@ export const createModalWindowCard = () => {
   button.setAttribute('type', 'button');
   button.classList.add('modal-window__button');
   button.textContent = 'Close';
+  button.addEventListener('click', closeHandler);
 
   info.append(button);
   content.append(info);
