@@ -1,4 +1,4 @@
-export const createModalWindowCard = (closeHandler) => {
+export const createModalWindowCard = (cardData, imgPath, closeHandler) => {
   const container = document.createElement('div');
   container.classList.add('modal-window');
 
@@ -9,8 +9,8 @@ export const createModalWindowCard = (closeHandler) => {
   image.classList.add('modal-window__image');
 
   const img = document.createElement('img');
-  img.src = `../../assets/img/menu/coffee-1.jpg`;
-  img.alt = '';
+  img.src = imgPath;
+  img.alt = cardData.name;
 
   image.append(img);
   content.append(image);
@@ -23,11 +23,11 @@ export const createModalWindowCard = (closeHandler) => {
 
   const title = document.createElement('h3');
   title.classList.add('modal-window__title');
-  title.textContent = 'Irish coffee';
+  title.textContent = cardData.name;
 
   const description = document.createElement('p');
   description.classList.add('modal-window__description');
-  description.textContent = 'Fragrant black coffee with Jameson Irish whiskey and whipped milk';
+  description.textContent = cardData.description;
 
   header.append(title, description);
   info.append(header);
@@ -42,7 +42,9 @@ export const createModalWindowCard = (closeHandler) => {
   const sizeWrapper = document.createElement('div');
   sizeWrapper.classList.add('controls__wrapper');
 
-  for (let i = 0; i < 3; i++) {
+  const sizes = Object.entries(cardData.sizes);
+
+  for (let i = 0; i < sizes.length; i++) {
     const button = document.createElement('button');
     button.setAttribute('type', 'button');
     button.classList.add('controls__item');
@@ -53,11 +55,11 @@ export const createModalWindowCard = (closeHandler) => {
 
     const label = document.createElement('span');
     label.classList.add('controls__label');
-    label.textContent = 's';
+    label.textContent = sizes[i][0];
 
     const text = document.createElement('span');
     text.classList.add('controls__text');
-    text.textContent = '200 ml';
+    text.textContent = sizes[i][1].size;
 
     button.append(label, text);
     sizeWrapper.append(button);
@@ -76,7 +78,7 @@ export const createModalWindowCard = (closeHandler) => {
   const additivesWrapper = document.createElement('div');
   additivesWrapper.classList.add('controls__wrapper');
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < cardData.additives.length; i++) {
     const button = document.createElement('button');
     button.setAttribute('type', 'button');
     button.classList.add('controls__item');
@@ -87,11 +89,11 @@ export const createModalWindowCard = (closeHandler) => {
 
     const label = document.createElement('span');
     label.classList.add('controls__label');
-    label.textContent = '1';
+    label.textContent = i + 1;
 
     const text = document.createElement('span');
     text.classList.add('controls__text');
-    text.textContent = 'Sugar';
+    text.textContent = cardData.additives[i].name;
 
     button.append(label, text);
     additivesWrapper.append(button);
@@ -107,7 +109,7 @@ export const createModalWindowCard = (closeHandler) => {
   span1.textContent = 'Total:';
 
   const span2 = document.createElement('span');
-  span2.textContent = '$7.00';
+  span2.textContent = `$${cardData.price}`;
 
   total.append(span1, span2);
   info.append(total);

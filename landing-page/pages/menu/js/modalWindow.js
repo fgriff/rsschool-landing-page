@@ -7,14 +7,35 @@ export const modalWindow = () => {
   const overlay = container.querySelector('.overlay');
   const cardsContainer = document.querySelector('.menu__cards');
 
-  const cardClickHandler = (e) => {
+  const fetchCardData = async () => {
+    const response = await fetch('../../data/products.json');
+
+    if (!response.ok) {
+      return;
+    }
+
+    return await response.json();
+  }
+
+  const getCardData = (cardsData, cardName) => {
+    return cardsData.find((card) => card.name === cardName);
+  }
+
+  const cardClickHandler = async (e) => {
     const card = e.target.closest('.menu__card');
 
     if (!card) {
       return;
     }
 
-    const modalWindowCard = createModalWindowCard(closeModalWindow);
+    const cardsData = await fetchCardData();
+
+    const cardName = card.querySelector('.card__title').textContent;
+    const imgPath = card.querySelector('.card__image').children[0].getAttribute('src');
+
+    const cardData = getCardData(cardsData, cardName);
+
+    const modalWindowCard = createModalWindowCard(cardData, imgPath, closeModalWindow);
 
     overlay.replaceChildren(modalWindowCard);
 
