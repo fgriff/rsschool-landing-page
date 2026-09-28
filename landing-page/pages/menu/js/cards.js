@@ -8,95 +8,51 @@ export const cards = () => {
   const tabs = document.querySelector('.menu__tabs');
   const tabsButtons = tabs.querySelectorAll('.tabs__item');
 
-  let cardsData = [];
-  let displayedСardsCount = 0;
-  let currentCategory = 'coffee';
-  const categoryCardsCount = {
-    coffee: {
-      count: 0,
-      offset: 0,
-    },
-    tea: {
-      count: 0,
-      offset: 0,
-    },
-    dessert: {
-      count: 0,
-      offset: 0,
-    },
+  const cardsCategory = {
+    coffee: [],
+    tea: [],
+    dessert: [],
   };
-  let prevScreenWidth = 0;
+  let currentCategory = 'coffee';
+  let isTabletLayout = window.innerWidth <= WIDTH_TO_SHOW_ALL_CARDS;
 
   (async () => {
-    const response = await fetch('../../data/products.json');
+    try {
+      const response = await fetch('../../data/products.json');
 
-    if (!response.ok) {
-      return;
+      if (!response.ok) {
+        return;
+      }
+
+      const cardsData = await response.json();
+      cardsData.forEach((card) => {
+        if (cardsCategory[card.category]) {
+          cardsCategory[card.category].push(card);
+        }
+      });
+
+      renderCards();
+    } catch (error) {
+      console.error("Error loading or processing data:", error);
     }
-
-    cardsData = await response.json();
-
-    initData();
-
-    const cards = generateCards(0, displayedСardsCount || categoryCardsCount[currentCategory].count);
-    showCards(cards);
   })()
 
-  const initData = () => {
-    displayedСardsCount = window.innerWidth > WIDTH_TO_SHOW_ALL_CARDS ? 0 : MIN_CARDS_COUNT;
-    prevScreenWidth = window.innerWidth;
-
-    for (const card of cardsData) {
-      switch (card.category) {
-        case 'coffee':
-          categoryCardsCount.coffee.count += 1;
-          categoryCardsCount.tea.offset += 1;
-          categoryCardsCount.dessert.offset += 1;
-          break;
-        case 'tea':
-          categoryCardsCount.tea.count += 1;
-          categoryCardsCount.dessert.offset += 1;
-          break;
-        case 'dessert':
-          categoryCardsCount.dessert.count += 1;
-          break;
-        default:
-          break;
-      }
-    }
-  }
-
-  const generateCards = (start, end) => {
-    const cards = [];
-    const offset = categoryCardsCount[currentCategory].offset;
-
-    for (let i = start; i < end; i++) {
-      cards.push(createCard(cardsData[i], (i + 1) - offset));
-    }
-
-    return cards;
-  }
-
-  const showCards = (cards) => {
-    cardsContainer.append(...cards);
-  }
-
-  const removeCards = () => {
-    const countCardsToRemove = cardsContainer.childElementCount - MIN_CARDS_COUNT;
-
-    for (let i = 0; i < countCardsToRemove; i++) {
-      const lastChild = cardsContainer.lastElementChild;
-
-      if (lastChild) {
-        lastChild.remove();
-      }
-    }
-  }
-
-  const changeActiveButton = () => {
+  const changeActiveTab = () => {
     tabsButtons.forEach((tab) =>
       tab.classList.toggle('tabs__item_active', tab.dataset['category'] === currentCategory))
   }
+
+  const renderCards = () => {
+    const currentCards = cardsCategory[currentCategory];
+
+    const count = isTabletLayout ? MIN_CARDS_COUNT : currentCards.length;
+
+    const cardsToRender = currentCards
+      .slice(0, count)
+      .map((cardData, index) => createCard(cardData, index + 1));
+
+    cardsContainer.replaceChildren(...cardsToRender);
+  };
 
   const tabsClickHandler = (e) => {
     const button = e.target.closest('button');
@@ -106,45 +62,20 @@ export const cards = () => {
     }
 
     currentCategory = button.dataset['category'];
+    changeActiveTab();
 
-    changeActiveButton();
+    renderCards();
+  };
 
-    let startIndex;
-    let endIndex;
+  const windowResizeHandler = () => {
+    const currentIsTablet = window.innerWidth <= WIDTH_TO_SHOW_ALL_CARDS;
 
-    if (window.innerWidth <= WIDTH_TO_SHOW_ALL_CARDS) {
-      startIndex = categoryCardsCount[currentCategory].offset;
-      endIndex = categoryCardsCount[currentCategory].offset + 4;
-    } else {
-      startIndex = categoryCardsCount[currentCategory].offset;
-      endIndex = categoryCardsCount[currentCategory].offset + categoryCardsCount[currentCategory].count;
+    if (currentIsTablet !== isTabletLayout) {
+      isTabletLayout = currentIsTablet;
+      renderCards();
     }
-
-    const newCategoryCards = generateCards(startIndex, endIndex);
-    cardsContainer.replaceChildren(...newCategoryCards);
-  }
-
-  const windowResizeHandler = (e) => {
-    displayedСardsCount = e.target.innerWidth > WIDTH_TO_SHOW_ALL_CARDS ? 0 : MIN_CARDS_COUNT;
-
-    if (e.target.innerWidth > WIDTH_TO_SHOW_ALL_CARDS &&
-        prevScreenWidth <= WIDTH_TO_SHOW_ALL_CARDS
-      ) {
-        prevScreenWidth = e.target.innerWidth;
-
-        const startIndex = categoryCardsCount[currentCategory].offset + 4;
-        const endIndex = categoryCardsCount[currentCategory].offset + categoryCardsCount[currentCategory].count;
-
-        const cards = generateCards(startIndex, endIndex);
-        showCards(cards);
-    } else if (e.target.innerWidth <= WIDTH_TO_SHOW_ALL_CARDS &&
-        prevScreenWidth > WIDTH_TO_SHOW_ALL_CARDS
-      ) {
-        prevScreenWidth = e.target.innerWidth;
-        removeCards();
-    }
-  }
+  };
 
   tabs.addEventListener('click', tabsClickHandler);
   window.addEventListener('resize', windowResizeHandler);
-}
+};
