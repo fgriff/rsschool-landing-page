@@ -22,6 +22,11 @@ export const burgerMenu = () => {
   }
 
   const burgerButtonClickHandler = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+
     toggleElement(burgerButton, 'burger_active');
     toggleElement(burgerMenu, 'burger-menu_opened');
     toggleElement(pageContainer, 'no-scroll');
