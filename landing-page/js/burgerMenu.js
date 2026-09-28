@@ -19,6 +19,8 @@ export const burgerMenu = () => {
     removeClass(burgerButton, 'burger_active');
     removeClass(burgerMenu, 'burger-menu_opened');
     removeClass(pageContainer, 'no-scroll');
+
+    targetHref = '';
   }
 
   const burgerButtonClickHandler = () => {
@@ -77,6 +79,8 @@ export const burgerMenu = () => {
     if (isMenuClosed && targetHref) {
       window.location.href = targetHref;
     }
+
+    targetHref = '';
   }
 
   const resizeHandler = (e) => {
