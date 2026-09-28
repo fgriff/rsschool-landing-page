@@ -10,12 +10,6 @@
   border-radius: 40px;
   z-index: 2;
 
-  &:hover {
-    & .modal-window__image > img {
-      transform: scale(1);
-    }
-  }
-
   &__content {
     display: flex;
     gap: 20px;

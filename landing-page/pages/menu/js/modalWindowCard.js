@@ -44,10 +44,14 @@ export const createModalWindowCard = (cardData, imgPath, closeHandler) => {
 
   const sizes = Object.entries(cardData.sizes);
 
+  const sizeButtons = [];
+
   for (let i = 0; i < sizes.length; i++) {
     const button = document.createElement('button');
     button.setAttribute('type', 'button');
     button.classList.add('controls__item');
+    button.dataset.size = sizes[i][0];
+    button.dataset.price = sizes[i][1]['add-price'];
 
     if (i === 0) {
       button.classList.add('controls__item_active');
@@ -61,9 +65,13 @@ export const createModalWindowCard = (cardData, imgPath, closeHandler) => {
     text.classList.add('controls__text');
     text.textContent = sizes[i][1].size;
 
+    button.addEventListener('click', sizeClickHandler);
+
     button.append(label, text);
-    sizeWrapper.append(button);
+    sizeButtons.push(button);
   }
+
+  sizeWrapper.append(...sizeButtons);
 
   sizeControls.append(sizeTitle, sizeWrapper);
   info.append(sizeControls);
@@ -78,14 +86,13 @@ export const createModalWindowCard = (cardData, imgPath, closeHandler) => {
   const additivesWrapper = document.createElement('div');
   additivesWrapper.classList.add('controls__wrapper');
 
+  const additivesButtons = [];
+
   for (let i = 0; i < cardData.additives.length; i++) {
     const button = document.createElement('button');
     button.setAttribute('type', 'button');
     button.classList.add('controls__item');
-
-    if (i === 0) {
-      button.classList.add('controls__item_active');
-    }
+    button.dataset.price = cardData.additives[i]['add-price'];
 
     const label = document.createElement('span');
     label.classList.add('controls__label');
@@ -95,9 +102,13 @@ export const createModalWindowCard = (cardData, imgPath, closeHandler) => {
     text.classList.add('controls__text');
     text.textContent = cardData.additives[i].name;
 
+    button.addEventListener('click', additiveClickHandler);
+
     button.append(label, text);
-    additivesWrapper.append(button);
+    additivesButtons.push(button);
   }
+
+  additivesWrapper.append(...additivesButtons);
 
   additivesControls.append(additivesTitle, additivesWrapper);
   info.append(additivesControls);
@@ -105,13 +116,13 @@ export const createModalWindowCard = (cardData, imgPath, closeHandler) => {
   const total = document.createElement('div');
   total.classList.add('modal-window__total');
 
-  const span1 = document.createElement('span');
-  span1.textContent = 'Total:';
+  const spanTotal = document.createElement('span');
+  spanTotal.textContent = 'Total:';
 
-  const span2 = document.createElement('span');
-  span2.textContent = `$${cardData.price}`;
+  const spanPrice = document.createElement('span');
+  spanPrice.textContent = `$${cardData.price}`;
 
-  total.append(span1, span2);
+  total.append(spanTotal, spanPrice);
   info.append(total);
 
   const attention = document.createElement('div');
@@ -147,6 +158,50 @@ export const createModalWindowCard = (cardData, imgPath, closeHandler) => {
   info.append(button);
   content.append(info);
   container.append(content);
+
+  const changeActiveButton = (buttons, dataAttr, value) => {
+    buttons.forEach((btn) =>
+      btn.classList.toggle('controls__item_active', btn.dataset[dataAttr] === value))
+  }
+
+  const basePrice = parseFloat(cardData.price);
+  let sizePrice = 0;
+  let additivePrice = 0;
+
+  function sizeClickHandler (e) {
+    if (e.currentTarget.tagName !== 'BUTTON') {
+      return;
+    }
+
+    if (e.currentTarget.classList.contains('controls__item_active')) {
+      return;
+    }
+
+    const size = e.currentTarget.dataset['size'];
+    sizePrice = parseFloat(e.currentTarget.dataset['price']);
+
+    changeActiveButton(sizeButtons, 'size', size);
+
+    spanPrice.textContent = `$${(basePrice + sizePrice + additivePrice).toFixed(2)}`;
+  }
+
+  function additiveClickHandler (e) {
+    if (e.currentTarget.tagName !== 'BUTTON') {
+      return;
+    }
+
+    const price = parseFloat(e.currentTarget.dataset['price']);
+
+    if (e.currentTarget.classList.contains('controls__item_active')) {
+      e.currentTarget.classList.remove('controls__item_active');
+      additivePrice -= price;
+      spanPrice.textContent = `$${(basePrice + sizePrice + additivePrice).toFixed(2)}`;
+    } else {
+      e.currentTarget.classList.add('controls__item_active');
+      additivePrice += price;
+      spanPrice.textContent = `$${(basePrice + sizePrice + additivePrice).toFixed(2)}`;
+    }
+  }
 
   return container;
 }
