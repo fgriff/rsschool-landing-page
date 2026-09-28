@@ -10,6 +10,9 @@
   --footer-bg: #{$color-footer-bg};
   --sun-hover-bg: #{$color-sun-hover-bg};
   --moon-hover-bg: #{$color-moon-hover-bg};
+  --overlay-bg: #{red($color-overlay-bg)}, #{green($color-overlay-bg)}, #{blue($color-overlay-bg)};
+  --modal-bg: #{$color-modal-bg};
+  --modal-control-bg: #{$color-modal-control-bg};
 }
 
 html.theme-dark {
@@ -22,6 +25,9 @@ html.theme-dark {
   --footer-bg: #{$color-footer-bg-dark};
   --sun-hover-bg: #{$color-sun-hover-bg-dark};
   --moon-hover-bg: #{$color-moon-hover-bg-dark};
+  --overlay-bg: #{red($color-overlay-bg-dark)}, #{green($color-overlay-bg-dark)}, #{blue($color-overlay-bg-dark)};
+  --modal-bg: #{$color-modal-bg-dark};
+  --modal-control-bg: #{$color-modal-control-bg-dark};
 }
 
 html:has(#theme-toggle:checked) {
@@ -34,4 +40,7 @@ html:has(#theme-toggle:checked) {
   --footer-bg: #{$color-footer-bg-dark};
   --sun-hover-bg: #{$color-sun-hover-bg-dark};
   --moon-hover-bg: #{$color-moon-hover-bg-dark};
+  --overlay-bg: #{red($color-overlay-bg-dark)}, #{green($color-overlay-bg-dark)}, #{blue($color-overlay-bg-dark)};
+  --modal-bg: #{$color-modal-bg-dark};
+  --modal-control-bg: #{$color-modal-control-bg-dark};
 }

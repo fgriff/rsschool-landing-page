@@ -1,0 +1,217 @@
+@use "../../abstract/constants" as *;
+@use "../../abstract/mixins" as *;
+
+.modal-window {
+  padding: 16px;
+  max-width: 800px;
+  width: 100%;
+  min-height: 504px;
+  background-color: var(--modal-bg);
+  border-radius: 40px;
+  z-index: 2;
+
+  &:hover {
+    cursor: pointer;
+
+    & .modal-window__image > img {
+      transform: scale(1);
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__image{
+    width: 310px;
+    height: 310px;
+    aspect-ratio: 1 / 1;
+    border-radius: 40px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet-650 {
+      display: none;
+    }
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transform: scale(1.1);
+      transition: transform $transition-duration;
+    }
+  }
+
+  &__info,
+  &__header,
+  &__controls {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__info {
+    gap: 20px;
+  }
+
+  &__header {
+    gap: 12px;
+  }
+
+  &__controls {
+    gap: 8px;
+  }
+
+  &__title,
+  &__description,
+  .controls__title,
+  .controls__label,
+  .controls__text,
+  &__total,
+  &__button {
+    color: var(--text-primary);
+  }
+
+  &__title,
+  &__total {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 125%;
+  }
+
+  &__description,
+  .controls__title {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__attention {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  &__button {
+    padding: 10px 0;
+    width: 100%;
+    border: 1px solid $color-border-inverse;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+    transition: color $transition-duration, background-color $transition-duration, border-color $transition-duration;
+
+    &:hover {
+      color: $color-text-inverse;
+      background-color: var(--moon-hover-bg);
+      border-color: var(--moon-hover-bg);
+    }
+  }
+}
+
+.controls {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__item {
+    padding: 8px 16px 8px 8px;
+    height: 46px;
+    border: 1px solid var(--border-primary);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color $transition-duration, border-color $transition-duration, color $transition-duration;
+
+    &_active,
+    &:hover {
+      background-color: var(--modal-control-bg);
+      border-color: var(--modal-control-bg);
+
+      & .controls__label {
+        background-color: var(--modal-bg);
+      }
+
+      & .controls__text {
+        color: $color-text-inverse;
+      }
+    }
+  }
+
+  &__label,
+  &__text {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+  }
+
+  &__label {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--border-primary);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color $transition-duration;
+  }
+
+  &__text {
+    color: var(--text-primary);
+  }
+}
+
+.attention {
+  padding: 12px 0;
+  border-top: 1px solid var(--border-primary);
+
+  & > svg,
+  &__text {
+    color: var(--text-primary);
+  }
+
+  &__text {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 140%;
+  }
+}
+
+.overlay {
+  padding: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(var(--overlay-bg), .8);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &_hidden {
+    display: none;
+  }
+
+  @include tablet-740 {
+    padding: 19px;
+  }
+}
