@@ -7,6 +7,7 @@ export const cards = () => {
   const cardsContainer = document.querySelector('.menu__cards');
   const tabs = document.querySelector('.menu__tabs');
   const tabsButtons = tabs.querySelectorAll('.tabs__item');
+  const loadMoreButton = document.querySelector('.menu__load-btn');
 
   const cardsCategory = {
     coffee: [],
@@ -15,6 +16,7 @@ export const cards = () => {
   };
   let currentCategory = 'coffee';
   let isTabletLayout = window.innerWidth <= WIDTH_TO_SHOW_ALL_CARDS;
+  let isLoaded = false;
 
   (async () => {
     try {
@@ -45,13 +47,21 @@ export const cards = () => {
   const renderCards = () => {
     const currentCards = cardsCategory[currentCategory];
 
-    const count = isTabletLayout ? MIN_CARDS_COUNT : currentCards.length;
+    const count = (isTabletLayout && !isLoaded) ? MIN_CARDS_COUNT : currentCards.length;
 
     const cardsToRender = currentCards
       .slice(0, count)
       .map((cardData, index) => createCard(cardData, index + 1));
 
     cardsContainer.replaceChildren(...cardsToRender);
+
+    const hasHiddenCards = isTabletLayout && currentCards.length > MIN_CARDS_COUNT;
+
+    if (hasHiddenCards && !isLoaded) {
+      loadMoreButton.classList.remove('menu__load-btn_hidden');
+    } else {
+      loadMoreButton.classList.add('menu__load-btn_hidden');
+    }
   };
 
   const tabsClickHandler = (e) => {
@@ -64,18 +74,28 @@ export const cards = () => {
     currentCategory = button.dataset['category'];
     changeActiveTab();
 
+    isLoaded = false;
+
     renderCards();
   };
+
+  const loadMoreButtonClickHandler = () => {
+    isLoaded = true;
+    renderCards();
+  }
 
   const windowResizeHandler = () => {
     const currentIsTablet = window.innerWidth <= WIDTH_TO_SHOW_ALL_CARDS;
 
     if (currentIsTablet !== isTabletLayout) {
       isTabletLayout = currentIsTablet;
+      isLoaded = false;
+
       renderCards();
     }
   };
 
   tabs.addEventListener('click', tabsClickHandler);
+  loadMoreButton.addEventListener('click', loadMoreButtonClickHandler);
   window.addEventListener('resize', windowResizeHandler);
 };

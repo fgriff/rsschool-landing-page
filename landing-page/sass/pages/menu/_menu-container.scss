@@ -11,10 +11,10 @@
   }
 
   &__load-btn {
-    display: none;
+    display: block;
 
-    @include tablet-768 {
-      display: block;
+    &_hidden {
+      display: none;
     }
   }
   
