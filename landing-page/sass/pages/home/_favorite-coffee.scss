@@ -34,9 +34,16 @@
     }
   }
 
+  &__wrapper,
+  &__track,
+  &__slide {
+    touch-action: pan-y;
+  }
+
   &__wrapper {
     width: 100%;
     overflow: hidden;
+    user-select: none;
   }
 
   &__track {
