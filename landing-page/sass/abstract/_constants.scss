@@ -7,6 +7,9 @@ $color-border-inverse: #665f55;
 $color-footer-bg: #665f55;
 $color-sun-hover-bg: #b0907a;
 $color-moon-hover-bg: #665f55;
+$color-overlay-bg: #403f3d;
+$color-modal-bg: #e1d4c9;
+$color-modal-control-bg: #665f55;
 
 $color-bg-dark: #292826;
 $color-text-accent-dark: #292826;
@@ -17,8 +20,14 @@ $color-border-primary-dark: #665f55;
 $color-footer-bg-dark: #403f3d;
 $color-sun-hover-bg-dark: #403f3d;
 $color-moon-hover-bg-dark: #b0907a;
+$color-overlay-bg-dark: #292826;
+$color-modal-bg-dark: #403f3d;
+$color-modal-control-bg-dark: #292826;
 
 $transition-duration: 0.3s;
+
+$size-container-margin-top: 20px;
+$size-header-height: 60px;
 
 $size-content-width: 1440px;
 $size-desktop-1439: 1439px;

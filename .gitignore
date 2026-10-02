@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+# CSS files
+landing-page/pages/home/css/
+landing-page/pages/menu/css/

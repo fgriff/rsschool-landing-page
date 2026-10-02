@@ -3,6 +3,7 @@
 
 .header {
   margin-bottom: 20px;
+  height: $size-header-height;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,9 +30,14 @@
     display: flex;
   }
 
-  .nav-list__item {
+  & .nav-list__item {
+    font-weight: 600;
     border-bottom: 2px solid transparent;
     transition: border $transition-duration;
+
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
 
     &:hover {
       border-bottom: 2px solid var(--text-primary);
@@ -174,16 +180,6 @@
   }
 }
 
-.nav-list {
-  &__item {
-    font-weight: 600;
-
-    &:not(:last-child) {
-      margin-right: 40px;
-    }
-  }
-}
-
 .burger {
   width: 44px;
   height: 44px;
@@ -197,13 +193,26 @@
     height: 2px;
     background-color: var(--text-primary);
     position: absolute;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: calc(50% - 1px);
+    left: calc(50% - 8px);
     transition: transform $transition-duration;
 
+    &:first-child {
+      transform: translateY(-4px);
+    }
+
     &:last-child {
-      top: 24px;
+      transform: translateY(4px);
+    }
+  }
+
+  &_active {
+    .burger__line:first-child {
+      transform: rotate(45deg) translateY(0);
+    }
+
+    .burger__line:last-child {
+      transform: rotate(-45deg) translateY(0);
     }
   }
 }

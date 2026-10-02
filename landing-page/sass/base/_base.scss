@@ -37,3 +37,7 @@ body {
   font-size: 1.6rem;
   background-color: var(--background);
 }
+
+body:has(.no-scroll) {
+  overflow-y: hidden;
+}

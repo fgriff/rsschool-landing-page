@@ -11,10 +11,10 @@
   }
 
   &__load-btn {
-    display: none;
+    display: block;
 
-    @include desktop-1439 {
-      display: block;
+    &_hidden {
+      display: none;
     }
   }
   

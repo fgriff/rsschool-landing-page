@@ -75,111 +75,40 @@
         </div>
       </div>
     </header>
+    <div class="burger-menu">
+      <nav class="burger-menu__nav">
+        <ul class="burger-menu__nav-list nav-list">
+          <li class="nav-list__item"><a href="../home/#favorite">Favorite coffee</a></li>
+          <li class="nav-list__item"><a href="../home/#about">About</a></li>
+          <li class="nav-list__item"><a href="../home/#mobile-app">Mobile app</a></li>
+          <li class="nav-list__item"><a href="#contact">Contact us</a></li>
+        </ul>
+      </nav>
+    </div>
 
     <main class="menu">
       <h1 class="menu__title">Behind each of our cups hides an <span class="menu__title_accent">amazing surprise</span></h1>
       <div class="menu__tabs tabs" role="tablist" aria-label="Menu categories">
-        <button class="tabs__item tabs__item_active" type="button">
+        <button class="tabs__item tabs__item_active" type="button" data-category="coffee">
           <span class="tabs__icon">
             <img src="../../assets/img/tabs/coffee.png" alt="">
           </span>
           <span class="tabs__text">Coffee</span>
         </button>
-        <button class="tabs__item" type="button">
+        <button class="tabs__item" type="button" data-category="tea">
           <span class="tabs__icon">
             <img src="../../assets/img/tabs/tea.png" alt="">
           </span>
           <span class="tabs__text">Tea</span>
         </button>
-        <button class="tabs__item" type="button">
+        <button class="tabs__item" type="button" data-category="dessert">
           <span class="tabs__icon">
             <img src="../../assets/img/tabs/dessert.png" alt="">
           </span>
           <span class="tabs__text">Dessert</span>
         </button>
       </div>
-      <div class="menu__cards">
-        <div class="menu__card card">
-          <div class="card__image">
-            <img src="../../assets/img/menu/coffee-1.jpg" alt="Irish coffee">
-          </div>
-          <div class="card__info">
-            <h2 class="card__title">Irish coffee</h2>
-            <p class="card__description">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
-            <div class="card__price">$7.00</div>
-          </div>
-        </div>
-        <div class="menu__card card">
-          <div class="card__image">
-            <img src="../../assets/img/menu/coffee-2.jpg" alt="Kahlua coffee">
-          </div>
-          <div class="card__info">
-            <h2 class="card__title">Kahlua coffee</h2>
-            <p class="card__description">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
-            <div class="card__price">$7.00</div>
-          </div>
-        </div>
-        <div class="menu__card card">
-          <div class="card__image">
-            <img src="../../assets/img/menu/coffee-3.jpg" alt="Honey raf">
-          </div>
-          <div class="card__info">
-            <h2 class="card__title">Honey raf</h2>
-            <p class="card__description">Espresso with frothed milk, cream and aromatic honey</p>
-            <div class="card__price">$5.50</div>
-          </div>
-        </div>
-        <div class="menu__card card">
-          <div class="card__image">
-            <img src="../../assets/img/menu/coffee-4.jpg" alt="Ice cappuccino">
-          </div>
-          <div class="card__info">
-            <h2 class="card__title">Ice cappuccino</h2>
-            <p class="card__description">Cappuccino with soft thick foam in summer version with ice</p>
-            <div class="card__price">$5.00</div>
-          </div>
-        </div>
-        <div class="menu__card card">
-          <div class="card__image">
-            <img src="../../assets/img/menu/coffee-5.jpg" alt="Espresso">
-          </div>
-          <div class="card__info">
-            <h2 class="card__title">Espresso</h2>
-            <p class="card__description">Classic black coffee</p>
-            <div class="card__price">$4.50</div>
-          </div>
-        </div>
-        <div class="menu__card card">
-          <div class="card__image">
-            <img src="../../assets/img/menu/coffee-6.jpg" alt="Latte">
-          </div>
-          <div class="card__info">
-            <h2 class="card__title">Latte</h2>
-            <p class="card__description">Espresso coffee with the addition of steamed milk and dense milk foam</p>
-            <div class="card__price">$5.50</div>
-          </div>
-        </div>
-        <div class="menu__card card">
-          <div class="card__image">
-            <img src="../../assets/img/menu/coffee-7.jpg" alt="Latte macchiato">
-          </div>
-          <div class="card__info">
-            <h2 class="card__title">Latte macchiato</h2>
-            <p class="card__description">Espresso with frothed milk and chocolate</p>
-            <div class="card__price">$5.50</div>
-          </div>
-        </div>
-        <div class="menu__card card">
-          <div class="card__image">
-            <img src="../../assets/img/menu/coffee-8.jpg" alt="Coffee with cognac">
-          </div>
-          <div class="card__info">
-            <h2 class="card__title">Coffee with cognac</h2>
-            <p class="card__description">Fragrant black coffee with cognac and whipped cream</p>
-            <div class="card__price">$6.50</div>
-          </div>
-        </div>
-      </div>
+      <div class="menu__cards"></div>
       <div class="menu__load-btn">
         <button class="menu__load-more-btn" type="button" aria-label="Load more">
           <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -231,8 +160,9 @@
         </div>
       </div>
     </footer>
+    <div class="overlay overlay_hidden"></div>
   </div>
 
-  <script src="./script.js"></script>
+  <script type="module" src="./js/script.js"></script>
 </body>
 </html>
