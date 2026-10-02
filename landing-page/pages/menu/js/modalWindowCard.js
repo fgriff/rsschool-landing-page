@@ -1,4 +1,4 @@
-export const createModalWindowCard = (cardData, imgPath, closeHandler) => {
+export const createModalWindowCard = (cardData, cardIndex, closeHandler) => {
   const container = document.createElement('div');
   container.classList.add('modal-window');
 
@@ -9,7 +9,7 @@ export const createModalWindowCard = (cardData, imgPath, closeHandler) => {
   image.classList.add('modal-window__image');
 
   const img = document.createElement('img');
-  img.src = imgPath;
+  img.src = `../../assets/img/menu/${cardData.category}-${cardIndex + 1}.jpg`;
   img.alt = cardData.name;
 
   image.append(img);

@@ -1,12 +1,13 @@
-export const createCard = (cardData, cardNumber) => {
+export const createCard = (cardData, cardIndex) => {
   const card = document.createElement('div');
   card.classList.add('menu__card', 'card');
+  card.setAttribute('data-id', cardIndex);
 
   const cardImage = document.createElement('div');
   cardImage.classList.add('card__image');
 
   const image = document.createElement('img');
-  image.src = `../../assets/img/menu/${cardData.category}-${cardNumber}.jpg`;
+  image.src = `../../assets/img/menu/${cardData.category}-${cardIndex + 1}.jpg`;
   image.alt = cardData.name;
 
   cardImage.append(image);
